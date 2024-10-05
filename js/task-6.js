@@ -24,16 +24,13 @@ function handleCreate() {
 
 function createBoxes(amount) {
   clear();
+  let html = "";
   for (let i = 0; i < amount; i++) {
-    const square = document.createElement("div");
-    square.style.width = `${size}px`;
-    square.style.height = `${size}px`;
-    square.style.backgroundColor = getRandomHexColor();
-
-    boxes.append(square);
-
+    const color = getRandomHexColor();
+    html += `<div style="width: ${size}px; height: ${size}px; background-color: ${color};"></div>`;
     size += 10;
   }
+  boxes.innerHTML = html;
 }
 
 function clear() {
